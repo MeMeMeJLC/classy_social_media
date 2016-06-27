@@ -9,7 +9,7 @@ function LoginAuthentication($db, $theUserName, $thePassword){
 			$theUserName = $_POST["theUserName"];
 			$thePassword = $_POST["thePassword"];
 			$stored_password = readElement( 'password', 'password', 'user', 'userName', $theUserName);
-			echo $thePassword." ".$stored_password;
+			echo "entered pword: $thePassword , storedpword: $stored_password";
 			#sleep(2);
 			
 			if(password_verify( $thePassword, $stored_password)){
