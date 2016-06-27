@@ -30,11 +30,11 @@ if(isset($_POST['comment'], $_POST['annotationLocationX'], $_POST['annotationLoc
 		
 		if(!empty($comment) && !empty($locationX) && !empty($locationY)){
 			if(Token::check($_POST['token'])){
-			echo '<h1>Processed note!</h1>';
+				echo '<h1>Processed note!</h1>';
 				$theAnnotationLocationX = " ".$_POST['annotationLocationX'];
-	$theAnnotationLocationY = " ".$_POST['annotationLocationY']." ";
-	createAnAnnotation($theImageID, $theUserID, $comment, $theAnnotationLocationX, $theAnnotationLocationY);
-	header("Refresh:0");
+				$theAnnotationLocationY = " ".$_POST['annotationLocationY']." ";
+				createAnAnnotation($theImageID, $theUserID, $comment, $theAnnotationLocationX, $theAnnotationLocationY);
+				header("Refresh:0");
 			}
 		}
 	}

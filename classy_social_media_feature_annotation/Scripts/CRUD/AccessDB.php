@@ -2,6 +2,8 @@
 
 try {
 require_once("../Connection/ConnectDB.php");
+require_once("Javascript.js");
+
 } catch (Exception $e){
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
@@ -79,9 +81,7 @@ function deleteElement() {
 			$id = $aRow['annotation_id'];
 			$comment = $aRow['annotation_comment'];
 			;$_POST['commentForDisplay'] = $comment; 
-			
 
-		/*echo "<image id='$id' src='resources/icon.png' style='position:fixed; margin-left:$x; margin-top:$y;' onclick='displayAnnotationInATable($id)'></image>";*/
 		echo "<image id='$id' src='../../resources/icon.png' style='position:fixed; margin-left:$x; margin-top:$y;' onclick='showUser($id)'></image>";
 		}				
 	}
