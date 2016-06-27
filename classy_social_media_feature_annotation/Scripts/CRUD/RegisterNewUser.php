@@ -37,6 +37,6 @@ echo "<h2>register new user</h2>";
 </form>
 
 <br /><br />
-<a href="main.php">Return To Main Form</a>
+<a href="../../main.php">Return To Main Form</a>
 
 </html>

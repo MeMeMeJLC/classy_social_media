@@ -14,22 +14,14 @@ function LoginAuthentication($db, $theUserName, $thePassword){
 			
 			if(password_verify( $thePassword, $stored_password)){
 				echo "<br>you are in!";
-				$theUserID = readElement($db, $theUserName);
-				#echo " The userID = $theUserID";
-					   // specify where to save the session variables
-			//session_save_path("./");
-			echo "<script>window.alert($theUserID)</script>";
+				$theUserID = readElement( 'userID', 'userID', 'user', 'userName', $theUserName);
+
 			session_start();
 		  // register the session variables and load the next page
-			/*$_SESSION['theUserName'] = $theUserName;
-			$_SESSION['thePassword'] = $thePassword;
-			$_SESSION['theUserID'] = $theUserID;*/
-			/*sleep(1);
-			header ("Location:profile.php") ;
-			exit;*/
-			//echo "<br> session id ".$_SESSION['theUserID'];
-			/*$user = getAUser($db,$theUserID);
-			displayAUser($user);*/
+			$_SESSION['theUserID'] = $theUserID;
+			#sleep(1);
+			header ("Location:../CRUD/UserMenu.php") ;
+			exit;
 	   
 			} else{
 				echo "<br>not valid login info";
